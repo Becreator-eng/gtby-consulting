@@ -64,12 +64,11 @@
             margin: 0 auto;
         }
 
+        /* LOGO : on affiche tout le mot, sans crop */
         .logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 999px;
-            border: 1px solid var(--soft);
-            object-fit: cover;
+            height: 64px;           /* ajuste à 70 si tu veux un peu plus gros */
+            width: auto;
+            display: block;
             margin: 0 auto 1.5rem;
         }
 
@@ -136,13 +135,14 @@
         /* AESTHETIC STRIP */
         .aesthetic-strip {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
         .aesthetic-strip img {
             width: 100%;
-            height: 280px;
+            height: auto;
+            aspect-ratio: 16 / 9;      /* vrai 16:9 */
             object-fit: cover;
             border: 1px solid var(--soft);
         }
@@ -298,8 +298,8 @@
         }
 
         @media (max-width: 760px) {
-            .aesthetic-strip img {
-                height: 180px;
+            .aesthetic-strip {
+                grid-template-columns: 1fr; /* une image par ligne sur mobile */
             }
         }
     </style>
@@ -310,7 +310,6 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <!-- Remplace "logo-gtby.png" par ton vrai fichier -->
             <img src="LOGO GenerateToBeYou.jpeg" alt="GTBY Logo" class="logo">
             <div class="brand">GTBY — Generate To Be You</div>
             <h1>Strategic AI Consulting for Brands</h1>
@@ -352,13 +351,12 @@
     <section>
         <h2 class="section-title">Aesthetic Signature</h2>
         <div class="aesthetic-strip">
-            <!-- Remplace les src par tes 6 images réelles -->
-            <img src="gtby-winterpeak-ext-01.png" alt="GTBY Winterpeak Exterior">
-            <img src="gtby-winterpeak-boardroom-01.png" alt="GTBY Winterpeak Boardroom">
-            <img src="gtby-winterpeak-corridor-01.png" alt="GTBY Winterpeak Corridor">
-            <img src="gtby-winterpeak-peaceroom-01.png" alt="GTBY Winterpeak Peace Room">
-            <img src="gtby-winterpeak-bedroom-01.png" alt="GTBY Winterpeak Bedroom">
-            <img src="gtby-winterpeak-spa-01.png" alt="GTBY Winterpeak Spa">
+            <img src="gtby-winterpeak-ext-01.png"        alt="GTBY Winterpeak Exterior">
+            <img src="gtby-winterpeak-boardroom-01.png"  alt="GTBY Winterpeak Boardroom">
+            <img src="gtby-winterpeak-corridor-01.png"   alt="GTBY Winterpeak Corridor">
+            <img src="gtby-winterpeak-peaceroom-01.png"  alt="GTBY Winterpeak Peace Room">
+            <img src="gtby-winterpeak-bedroom-01.png"    alt="GTBY Winterpeak Bedroom">
+            <img src="gtby-winterpeak-spa-01.png"        alt="GTBY Winterpeak Spa">
         </div>
         <p class="aesthetic-caption">
             All images are generated and calibrated through the GTBY system — no stock, no templates.
@@ -483,14 +481,15 @@
     <section class="final-cta" id="contact">
         <h2 class="section-title">Ready to build your creative infrastructure?</h2>
 
-        <!-- Remplace l’URL par TON lien Calendly -->
         <a class="cta-button" href="https://calendly.com/yakouroman/30min" target="_blank" rel="noopener noreferrer">
             Book a Strategic Call
         </a>
 
         <p class="contact-subtext">
             Prefer email? Contact me at
-            <a href="mailto:diegzmarks.ai@outlook.com" style="color:#e8e8e8; text-decoration:underline;">contact@gtby.com</a>
+            <a href="mailto:diegzmarks.ai@outlook.com" style="color:#e8e8e8; text-decoration:underline;">
+                diegzmarks.ai@outlook.com
+            </a>
         </p>
     </section>
 
