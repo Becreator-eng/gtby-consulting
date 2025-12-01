@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTBY — Strategic AI Consulting for Brands</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0a0a0a;
+            color: #e8e8e8;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --accent: #6450b4;
+            --soft: rgba(255,255,255,0.08);
+            --light: rgba(255,255,255,0.03);
+            --white: #fff;
+            --gray: #999;
+            --black: #0a0a0a;
+        }
+
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            font-weight: 300;
+            margin-bottom: 4rem;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(100,80,180,0.15) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 999px;
+            border: 1px solid var(--soft);
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+        }
+
+        .brand {
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 9vw, 6rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            padding: 1.2rem 3rem;
+            background: var(--white);
+            color: var(--black);
+            font-weight: 500;
+            border: 1px solid var(--white);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        /* STATS */
+        .stats {
+            border-top: 1px solid var(--soft);
+            border-bottom: 1px solid var(--soft);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: #777;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* AESTHETIC STRIP */
+        .aesthetic-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .aesthetic-strip img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid var(--soft);
+        }
+
+        .aesthetic-caption {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+        }
+
+        /* NOT A TOOL Section */
+        .system-box {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 3rem;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        .system-box strong {
+            color: var(--white);
+        }
+
+        /* SPRINT CARDS */
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .day-card {
+            background: var(--light);
+            border-left: 3px solid var(--accent);
+            padding: 2rem;
+            border-top: 1px solid var(--soft);
+        }
+
+        .day-number {
+            color: var(--accent);
+            letter-spacing: 0.25em;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* WHO IS THIS FOR */
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .who-card {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 2rem;
+        }
+
+        .who-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .who-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ROI Block */
+        .roi-box {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 3.5rem;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .price-sub {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* TJM Block */
+        .tjm-box {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tjm-value {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .tjm-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .tjm-line {
+            width: 140px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0.75rem auto 0;
+        }
+
+        .tjm-subtext {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* TRUSTED BY */
+        .flags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .flag {
+            color: var(--gray);
+            font-size: 0.9rem;
+            border: 1px solid var(--soft);
+            padding: 0.5rem 1rem;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-subtext {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 760px) {
+            .aesthetic-strip img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Remplace "logo-gtby.png" par ton vrai fichier -->
+            <img src="logo-gtby.png" alt="GTBY Logo" class="logo">
+            <div class="brand">GTBY — Generate To Be You</div>
+            <h1>Strategic AI Consulting for Brands</h1>
+            <p class="hero-subtitle">
+                I help teams replace 2–3 weeks of visual production<br>
+                with a brand-calibrated AI aesthetic system delivered in 72 hours.
+            </p>
+            <a href="#contact" class="cta-button">Book a Strategic Call</a>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div>
+                <div class="stat-value">4M+</div>
+                <div class="stat-label">International views (no ads)</div>
+            </div>
+            <div>
+                <div class="stat-value">82%</div>
+                <div class="stat-label">Creators audience (18–34)</div>
+            </div>
+            <div>
+                <div class="stat-value">Global</div>
+                <div class="stat-label">USA • FR • RU • SA • KR</div>
+            </div>
+            <div>
+                <div class="stat-value">Cinematic</div>
+                <div class="stat-label">Aesthetic mastery</div>
+            </div>
+            <div>
+                <div class="stat-value">$3,850/day</div>
+                <div class="stat-label">Senior consulting rate (TJM)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AESTHETIC STRIP (6 IMAGES) -->
+    <section>
+        <h2 class="section-title">Aesthetic Signature</h2>
+        <div class="aesthetic-strip">
+            <!-- Remplace les src par tes 6 images réelles -->
+            <img src="image1.jpg" alt="GTBY Visual 1">
+            <img src="image2.jpg" alt="GTBY Visual 2">
+            <img src="image3.jpg" alt="GTBY Visual 3">
+            <img src="image4.jpg" alt="GTBY Visual 4">
+            <img src="image5.jpg" alt="GTBY Visual 5">
+            <img src="image6.jpg" alt="GTBY Visual 6">
+        </div>
+        <p class="aesthetic-caption">
+            All images are generated and calibrated through the GTBY system — no stock, no templates.
+        </p>
+    </section>
+
+    <!-- NOT A TOOL — A SYSTEM -->
+    <section>
+        <div class="system-box">
+            GTBY is not an AI tool.<br><br>
+            It is a <strong>creative infrastructure</strong> built around your brand’s aesthetic DNA.<br>
+            It ensures <strong>coherence, speed, scalability</strong> and eliminates the <strong>$20,000 hidden cost</strong> of traditional production.
+        </div>
+    </section>
+
+    <!-- SPRINT 72H -->
+    <section>
+        <h2 class="section-title">The Visual Vantage Plus™ Aesthetic System Sprint (72h)</h2>
+
+        <div class="days-grid">
+            <div class="day-card">
+                <div class="day-number">DAY 1</div>
+                <div class="day-title">Audit & DNA Extraction</div>
+                <p>Brand analysis, coherence mapping, extraction of your core visual DNA and key assets.</p>
+            </div>
+
+            <div class="day-card">
+                <div class="day-number">DAY 2</div>
+                <div class="day-title">System Construction</div>
+                <p>Calibration, internal visual modules, intensive testing and creation of your Visual Blueprint™.</p>
+            </div>
+
+            <div class="day-card">
+                <div class="day-number">DAY 3</div>
+                <div class="day-title">Deployment & Training</div>
+                <p>Workflow integration into your tools, team training and go-live support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IS THIS FOR -->
+    <section>
+        <h2 class="section-title">Who is this for?</h2>
+
+        <div class="who-grid">
+            <div class="who-card">
+                <div class="who-title">Brands & Agencies</div>
+                <p class="who-text">
+                    Teams running recurring campaigns who want to reduce production time,
+                    maintain coherence across markets and avoid burning budgets on manual iterations.
+                </p>
+            </div>
+            <div class="who-card">
+                <div class="who-title">Studios & Creative Leads</div>
+                <p class="who-text">
+                    Art directors and studios who need a stable visual system they can rely on
+                    to generate series, variations and explorations without losing their signature.
+                </p>
+            </div>
+            <div class="who-card">
+                <div class="who-title">Founders & Creative Entrepreneurs</div>
+                <p class="who-text">
+                    Vision-driven founders who want to industrialise their aesthetic,
+                    without diluting the soul of their brand or depending on a large internal team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTMENT & ROI -->
+    <section>
+        <h2 class="section-title">Investment & ROI</h2>
+
+        <!-- TJM EMPHASIS -->
+        <div class="tjm-box">
+            <div class="tjm-value">$3,850/day</div>
+            <div class="tjm-label">Senior Creative Technologist Consulting Rate</div>
+            <div class="tjm-line"></div>
+            <div class="tjm-subtext">
+                Used as the base for custom or extended work beyond the Sprint.
+            </div>
+        </div>
+
+        <div class="roi-box">
+            <div class="price">$18,500</div>
+            <div class="price-sub">Visual Vantage Plus™ Aesthetic System Sprint (3-day engagement)</div>
+
+            <p style="color:var(--gray); margin-top:1rem;">
+                Equivalent to a 3-day senior consulting engagement plus full system deployment.<br>
+                Replaces a production cost of <strong>$20k–$25k</strong> per campaign.
+            </p>
+
+            <p style="color:#bbb; margin-top:1.5rem;">
+                You recover your investment on your <strong>first campaign</strong>.
+            </p>
+
+            <p style="color:#bbb; margin-top:1.5rem;">
+                + $200/month — base license & continuous calibration.
+            </p>
+
+            <div style="margin-top:2.5rem;">
+                <a href="#contact" class="cta-button">Discuss Your Sprint</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED IN -->
+    <section>
+        <h2 class="section-title">Trusted & Watched Worldwide</h2>
+
+        <div class="flags">
+            <div class="flag">France</div>
+            <div class="flag">USA</div>
+            <div class="flag">Russia</div>
+            <div class="flag">Saudi Arabia</div>
+            <div class="flag">Mexico</div>
+            <div class="flag">South Korea</div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA / CONTACT -->
+    <section class="final-cta" id="contact">
+        <h2 class="section-title">Ready to build your creative infrastructure?</h2>
+
+        <!-- Remplace l’URL par TON lien Calendly -->
+        <a class="cta-button" href="https://calendly.com/gtby-consulting/30min" target="_blank" rel="noopener noreferrer">
+            Book a Strategic Call
+        </a>
+
+        <p class="contact-subtext">
+            Prefer email? Contact me at
+            <a href="mailto:contact@gtby.com" style="color:#e8e8e8; text-decoration:underline;">contact@gtby.com</a>
+        </p>
+    </section>
+
+</body>
+</html>
