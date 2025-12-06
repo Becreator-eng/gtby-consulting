@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTBY — Strategic AI Consulting for Brands</title>
+    <title>GTBY — Strategic AI Aesthetic Systems for Architecture</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -42,7 +42,7 @@
 
         /* HERO */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -62,18 +62,6 @@
             z-index: 2;
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        /* ⚠️ LOGO FIX — pas rogné */
-        .logo {
-            width: 110px;
-            height: auto;
-            border-radius: 100px;
-            border: 1px solid var(--soft);
-            object-fit: contain;
-            padding: 8px;
-            margin: 0 auto 1.5rem;
-            background: rgba(255,255,255,0.03);
         }
 
         .brand {
@@ -96,10 +84,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* ⚠️ CTA FIX MOBILE */
         .cta-button {
-            display: inline-block;
-            white-space: nowrap;
             padding: 1.2rem 3rem;
             background: var(--white);
             color: var(--black);
@@ -108,8 +93,8 @@
             text-decoration: none;
             letter-spacing: 0.05em;
             transition: 0.3s;
-            border-radius: 4px;
         }
+
         .cta-button:hover {
             background: transparent;
             color: var(--white);
@@ -140,19 +125,18 @@
             text-transform: uppercase;
         }
 
-        /* AESTHETIC STRIP FIXED 16:9 */
+        /* AESTHETIC STRIP */
         .aesthetic-strip {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
         }
 
         .aesthetic-strip img {
             width: 100%;
-            aspect-ratio: 16 / 9; /* 🔥 all images correctly framed */
+            aspect-ratio: 16 / 9;
             object-fit: cover;
             border: 1px solid var(--soft);
-            border-radius: 4px;
         }
 
         .aesthetic-caption {
@@ -162,24 +146,317 @@
             margin-top: 1.5rem;
         }
 
-        /* NOT A TOOL Section */
+        .series-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-top: -2rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* SYSTEM / WHY GTBY */
         .system-box {
             background: var(--light);
             border: 1px solid var(--soft);
             padding: 3rem;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             line-height: 1.9;
             text-align: center;
         }
 
-        .system-box strong { color: var(--white); }
+        .system-box p {
+            margin-bottom: 1.3rem;
+        }
 
-        /* Other sections unchanged... */
+        .system-box strong {
+            color: var(--white);
+        }
+
+        /* PROGRAM FLOW CARDS */
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .day-card {
+            background: var(--light);
+            border-left: 3px solid var(--accent);
+            padding: 2rem;
+            border-top: 1px solid var(--soft);
+        }
+
+        .day-number {
+            color: var(--accent);
+            letter-spacing: 0.25em;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* WHO IS THIS FOR */
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .who-card {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 2rem;
+        }
+
+        .who-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .who-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* TJM Block */
+        .tjm-box {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .tjm-value {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .tjm-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .tjm-line {
+            width: 140px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0.75rem auto 0;
+        }
+
+        .tjm-subtext {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* OFFERS / ROI Block */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .offer-card {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 2.5rem 2rem;
+            text-align: left;
+        }
+
+        .offer-name {
+            font-size: 1.1rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .offer-scope {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #777;
+            margin-bottom: 0.75rem;
+        }
+
+        .offer-price {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-tagline {
+            font-size: 0.95rem;
+            color: #bbb;
+            margin-bottom: 1rem;
+        }
+
+        .offer-list {
+            list-style: none;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .offer-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* LICENCES */
+        .license-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 2.5rem;
+        }
+
+        /* ROI SECTION */
+        .roi-section {
+            background: transparent;
+        }
+
+        .roi-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.98rem;
+        }
+
+        .roi-text p {
+            margin-bottom: 1rem;
+        }
+
+        .roi-list {
+            margin-top: 1.5rem;
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .roi-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        /* WORLD MAP / GLOBAL RESONANCE */
+        .world-section {
+            text-align: center;
+        }
+
+        .world-map {
+            margin: 0 auto;
+            margin-top: 2rem;
+            max-width: 900px;
+            border-radius: 24px;
+            border: 1px solid var(--soft);
+            overflow: hidden;
+        }
+
+        .world-map img.world-map-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .world-subtext {
+            margin-top: 1.75rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .world-quote {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #ddd;
+            font-style: italic;
+        }
+
+        .why-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.98rem;
+        }
+
+        /* COUNTRY TAGS UNDER MAP */
+        .flags {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .flag {
+            border: 1px solid var(--soft);
+            padding: 0.5rem 1.4rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border: 1px solid var(--soft);
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .testimonial-quote {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-meta {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .contact-subtext {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
 
         @media (max-width: 760px) {
-            .cta-button {
-                width: 100%;
-                max-width: 280px;
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .aesthetic-strip img {
+                aspect-ratio: 16 / 10;
+            }
+
+            .world-map {
+                max-width: 100%;
             }
         }
     </style>
@@ -190,17 +467,12 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-
-            <img src="LOGO GenerateToBeYou.jpeg" alt="GTBY Logo" class="logo">
-
-            <div class="brand">GTBY — Generate To Be You</div>
-            <h1>Strategic AI Consulting for Brands</h1>
-
+            <div class="brand">GTBY — GENERATE TO BE YOU</div>
+            <h1>Strategic AI Aesthetic Systems for Architecture</h1>
             <p class="hero-subtitle">
-                I help teams replace 2–3 weeks of visual production<br>
+                I help high-end teams replace 2–3 weeks of visual production<br>
                 with a brand-calibrated AI aesthetic system delivered in 72 hours.
             </p>
-
             <a href="#contact" class="cta-button">Book a Strategic Call</a>
         </div>
     </section>
@@ -208,18 +480,33 @@
     <!-- SOCIAL PROOF -->
     <section class="stats">
         <div class="stats-grid">
-            <div><div class="stat-value">4M+</div><div class="stat-label">International views (no ads)</div></div>
-            <div><div class="stat-value">82%</div><div class="stat-label">Creators audience (18–34)</div></div>
-            <div><div class="stat-value">Global</div><div class="stat-label">USA • FR • RU • SA • KR</div></div>
-            <div><div class="stat-value">Cinematic</div><div class="stat-label">Aesthetic mastery</div></div>
-            <div><div class="stat-value">$3,850/day</div><div class="stat-label">Senior consulting rate (TJM)</div></div>
+            <div>
+                <div class="stat-value">4M+</div>
+                <div class="stat-label">International views (no ads)</div>
+            </div>
+            <div>
+                <div class="stat-value">82%</div>
+                <div class="stat-label">Creators audience (18–34)</div>
+            </div>
+            <div>
+                <div class="stat-value">Global</div>
+                <div class="stat-label">USA • FR • RU • SA • KR • MENA</div>
+            </div>
+            <div>
+                <div class="stat-value">Cinematic</div>
+                <div class="stat-label">Architectural aesthetic mastery</div>
+            </div>
+            <div>
+                <div class="stat-value">600+</div>
+                <div class="stat-label">Visual series published</div>
+            </div>
         </div>
     </section>
 
-    <!-- AESTHETIC STRIP FIXED -->
+    <!-- SERIES 1 -->
     <section>
-        <h2 class="section-title">Aesthetic Signature</h2>
-
+        <h2 class="section-title">Architectural Aesthetic — Series I</h2>
+        <p class="series-subtitle">WINTERPEAK COLLECTION</p>
         <div class="aesthetic-strip">
             <img src="gtby-winterpeak-ext-01.png" alt="GTBY Winterpeak Exterior">
             <img src="gtby-winterpeak-boardroom-01.png" alt="GTBY Winterpeak Boardroom">
@@ -228,20 +515,337 @@
             <img src="gtby-winterpeak-bedroom-01.png" alt="GTBY Winterpeak Bedroom">
             <img src="gtby-winterpeak-spa-01.png" alt="GTBY Winterpeak Spa">
         </div>
-
-        <p class="aesthetic-caption">All images are generated and calibrated through the GTBY system — no stock, no templates.</p>
+        <p class="aesthetic-caption">
+            All images are generated and calibrated through the GTBY system — no stock, no templates.
+        </p>
     </section>
 
-    <!-- (le reste de ton code reste EXACT) -->
+    <!-- SERIES 2 -->
+    <section>
+        <h2 class="section-title">Architectural Aesthetic — Series II</h2>
+        <p class="series-subtitle">DESERT / RESORT VISION (PLACEHOLDER)</p>
+        <div class="aesthetic-strip">
+            <img src="gtby-series2-01.png" alt="GTBY Series 2 — 01">
+            <img src="gtby-series2-02.png" alt="GTBY Series 2 — 02">
+            <img src="gtby-series2-03.png" alt="GTBY Series 2 — 03">
+            <img src="gtby-series2-04.png" alt="GTBY Series 2 — 04">
+            <img src="gtby-series2-05.png" alt="GTBY Series 2 — 05">
+            <img src="gtby-series2-06.png" alt="GTBY Series 2 — 06">
+        </div>
+        <p class="aesthetic-caption">
+            Second collection space reserved for your desert / resort / coastal luxury world.
+        </p>
+    </section>
+
+    <!-- SERIES 3 -->
+    <section>
+        <h2 class="section-title">Architectural Aesthetic — Series III</h2>
+        <p class="series-subtitle">URBAN / SKYLINE VISION (PLACEHOLDER)</p>
+        <div class="aesthetic-strip">
+            <img src="gtby-series3-01.png" alt="GTBY Series 3 — 01">
+            <img src="gtby-series3-02.png" alt="GTBY Series 3 — 02">
+            <img src="gtby-series3-03.png" alt="GTBY Series 3 — 03">
+            <img src="gtby-series3-04.png" alt="GTBY Series 3 — 04">
+            <img src="gtby-series3-05.png" alt="GTBY Series 3 — 05">
+            <img src="gtby-series3-06.png" alt="GTBY Series 3 — 06">
+        </div>
+        <p class="aesthetic-caption">
+            Third collection for skyline, mixed-use developments or conceptual urban environments.
+        </p>
+    </section>
+
+    <!-- NOT A TOOL — WHY GTBY -->
+    <section>
+        <h2 class="section-title">Why GTBY is Different</h2>
+        <div class="system-box">
+            <p><strong>GTBY is not an AI tool.</strong></p>
+
+            <p>GTBY does not deliver renders. It builds a <strong>complete aesthetic system</strong>, reproducible by your teams across all your future projects.</p>
+
+            <p>A coherent, precise, sovereign visual language — one that reduces traditional visualization costs by <strong>$150,000 to $300,000</strong> per project and protects the long-term identity of your development.</p>
+
+            <p>A system proven through <strong>600+ calibrated series</strong>, over <strong>4 million international impressions</strong> in its first public year, and more than <strong>three years of continuous research, experimentation and R&D</strong> — visible, measurable, undeniable.</p>
+
+            <p><strong>What if your company was next?<br>Take control.<br>Don’t let others move ahead without you.</strong></p>
+        </div>
+    </section>
+
+    <!-- PROGRAM FLOW -->
+    <section>
+        <h2 class="section-title">How each GTBY program unfolds</h2>
+
+        <div class="days-grid">
+            <!-- SIGNATURE -->
+            <div class="day-card">
+                <div class="day-number">SIGNATURE · 3 DAYS</div>
+                <div class="day-title">Core Aesthetic System Sprint</div>
+                <p>
+                    Day 1 — Audit & DNA Extraction:<br>
+                    On-site or remote brand analysis, coherence mapping,<br>
+                    extraction of your core visual DNA and key architectural assets.
+                </p>
+                <p>
+                    Day 2 — System Construction:<br>
+                    Calibration, internal visual modules, intensive testing<br>
+                    and creation of your Visual Blueprint™ inside the GTBY system.
+                </p>
+                <p>
+                    Day 3 — Deployment & Training:<br>
+                    On-site presence for handover, workflow integration into your tools,<br>
+                    team training and go-live support.
+                </p>
+                <p style="margin-top:1rem; color:#999; font-size:0.9rem;">
+                    This is the full 3-day sprint included in every program. Signature focuses it on one flagship zone.
+                </p>
+            </div>
+
+            <!-- FOUNDATION -->
+            <div class="day-card">
+                <div class="day-number">FOUNDATION · 5 DAYS</div>
+                <div class="day-title">Expanded Aesthetic Infrastructure</div>
+                <p>
+                    Days 1–3 — Core Sprint:<br>
+                    Same 3-day Visual Vantage Plus™ sprint as Signature:<br>
+                    audit, system construction, deployment & on-site training.
+                </p>
+                <p>
+                    Days 4–5 — System Expansion:<br>
+                    Extension of the aesthetic system across multiple zones / programs.<br>
+                    Advanced modules, scenario building and strategic sessions with decision-makers.
+                </p>
+                <p style="margin-top:1rem; color:#999; font-size:0.9rem;">
+                    Foundation is designed for serious developments that need the system
+                    to cover more than one space or program.
+                </p>
+            </div>
+
+            <!-- LEGACY -->
+            <div class="day-card">
+                <div class="day-number">LEGACY · 7–10 DAYS</div>
+                <div class="day-title">Long-Term Aesthetic Infrastructure</div>
+                <p>
+                    Days 1–3 — Core Sprint:<br>
+                    Full Visual Vantage Plus™ sprint to establish the aesthetic DNA and core system.
+                </p>
+                <p>
+                    Days 4–7 — Portfolio / District Build:<br>
+                    Roll-out of the system across a portfolio or district, creation of extended visual modules,<br>
+                    narrative directions and video-oriented structures.
+                </p>
+                <p>
+                    Days 8–10 (optional) — Immersion & Advisory:<br>
+                    On-site immersion with your teams, refinement of key assets,<br>
+                    executive sessions and long-term aesthetic governance.
+                </p>
+                <p style="margin-top:1rem; color:#999; font-size:0.9rem;">
+                    Legacy is for visionary portfolios and districts that want to lock in their aesthetic
+                    sovereignty and stay ahead of competitors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IS THIS FOR -->
+    <section>
+        <h2 class="section-title">Who is this for?</h2>
+
+        <div class="who-grid">
+            <div class="who-card">
+                <div class="who-title">Developers & Investors</div>
+                <p class="who-text">
+                    High-end real estate and hospitality projects that need a coherent aesthetic system
+                    for presentations, approvals and global communication.
+                </p>
+            </div>
+            <div class="who-card">
+                <div class="who-title">Architecture & Design Studios</div>
+                <p class="who-text">
+                    Studios who want to explore, iterate and present architectural worlds
+                    without losing coherence or spending weeks on manual production.
+                </p>
+            </div>
+            <div class="who-card">
+                <div class="who-title">Founders & Creative Directors</div>
+                <p class="who-text">
+                    Vision-driven leaders who need a stable visual infrastructure
+                    that can support multiple projects, campaigns and evolutions of their brand.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTMENT & STRUCTURE -->
+    <section>
+        <h2 class="section-title">Investment & Structure</h2>
+
+        <!-- TJM EMPHASIS -->
+        <div class="tjm-box">
+            <div class="tjm-value">$10,000 / day</div>
+            <div class="tjm-label">Senior Creative Technologist & Aesthetic Architect</div>
+            <div class="tjm-line"></div>
+            <div class="tjm-subtext">
+                Used as the base for extended consulting, on-site work and bespoke engagements.
+            </div>
+        </div>
+
+        <div class="offers-grid">
+            <!-- OFFER 1 -->
+            <div class="offer-card">
+                <div class="offer-name">SIGNATURE</div>
+                <div class="offer-scope">FOR ONE FLAGSHIP UNIVERSE</div>
+                <div class="offer-price">$80,000</div>
+                <div class="offer-tagline">3-Day Visual Vantage Plus™ Aesthetic System Sprint</div>
+                <ul class="offer-list">
+                    <li>• Full aesthetic audit & DNA extraction</li>
+                    <li>• Visual Vantage Plus™ system calibration</li>
+                    <li>• Visual Blueprint™ for one flagship zone</li>
+                    <li>• On-site presence for calibration & team training</li>
+                    <li>• Delivery in 3 days</li>
+                </ul>
+            </div>
+
+            <!-- OFFER 2 -->
+            <div class="offer-card">
+                <div class="offer-name">FOUNDATION</div>
+                <div class="offer-scope">FOR YOUR FULL PROJECT</div>
+                <div class="offer-price">$200,000</div>
+                <div class="offer-tagline">5-Day Aesthetic Infrastructure Program</div>
+                <ul class="offer-list">
+                    <li>• Everything in Signature</li>
+                    <li>• Extended system coverage (multi-zones / programs)</li>
+                    <li>• Advanced visual modules & scenarios</li>
+                    <li>• Strategic sessions with decision-makers</li>
+                    <li>• On-site presence across key days</li>
+                    <li>• Delivery in 5 days</li>
+                </ul>
+            </div>
+
+            <!-- OFFER 3 -->
+            <div class="offer-card">
+                <div class="offer-name">LEGACY</div>
+                <div class="offer-scope">FOR PORTFOLIOS & DISTRICTS</div>
+                <div class="offer-price">$500,000</div>
+                <div class="offer-tagline">Long-term aesthetic infrastructure for visionary portfolios & districts</div>
+                <ul class="offer-list">
+                    <li>• Full-scale aesthetic system for a portfolio or district</li>
+                    <li>• Visual Vantage Plus™ + video / narrative extensions</li>
+                    <li>• On-site presence for immersion and rollout</li>
+                    <li>• Advisory support over time</li>
+                    <li>• Delivery in 7–10 days</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="license-note">
+            Ongoing system license per assistant:<br>
+            <strong>$1,500 / month</strong> for Signature,
+            <strong>$3,000 / month</strong> for Foundation,
+            <strong>$5,000 / month</strong> for Legacy.
+        </p>
+    </section>
+
+    <!-- ROI SECTION -->
+    <section class="roi-section">
+        <h2 class="section-title">Return on Investment</h2>
+        <div class="roi-text">
+            <p>
+                Visual Vantage Plus™ does not generate images.<br>
+                It generates <strong>brand-calibrated prompts</strong> for Midjourney, built on your aesthetic DNA.
+            </p>
+            <p>
+                Your teams can then create <strong>coherent, on-brand architectural visuals in minutes</strong> instead of days —
+                for every new phase, every new space, every new scenario.
+            </p>
+
+            <ul class="roi-list">
+                <li>• <strong>Time ROI:</strong> 2–3 weeks of visual production compressed into a 3–10 day system build.</li>
+                <li>• <strong>Cost ROI:</strong> traditional visualization costs reduced by <strong>$150,000–$300,000</strong> per project over time.</li>
+                <li>• <strong>System ROI:</strong> the more you use it, the more the system can be refined and extended — without rebuilding from scratch.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / QUOTES -->
+    <section class="testimonials-section">
+        <h2 class="section-title">How people react to GTBY visuals</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    “I have a friend in California whose house looks almost exactly like this.
+                    I had to look twice to believe it was generated.”
+                </div>
+                <div class="testimonial-meta">
+                    Message received on an architectural night series
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    “Are you an architect or are these just AI images?
+                    I can’t tell where the line is anymore.”
+                </div>
+                <div class="testimonial-meta">
+                    Comment from an architecture student
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    “I thought this was a real hotel project in the Gulf.
+                    The atmosphere feels alive and already built.”
+                </div>
+                <div class="testimonial-meta">
+                    Reaction to a resort / MENA-inspired series
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL RESONANCE / WORLD MAP -->
+    <section class="world-section">
+        <h2 class="section-title">Global Resonance</h2>
+        <p class="why-text">
+            GTBY visuals have reached audiences across continents — from North America to Europe,
+            the Gulf region and Asia — with over 4 million organic impressions.
+        </p>
+
+        <div class="world-map">
+            <!-- Remplace le src par le chemin de ta nouvelle carte GTBY -->
+            <img src="gtby-world-map.png" alt="GTBY global reach map" class="world-map-image">
+        </div>
+
+        <p class="world-subtext">
+            Resonance is not a metric — it is a signal that the aesthetic language is alive and understood.
+        </p>
+        <p class="world-quote">
+            “I create as I exist — you feel it.”
+        </p>
+
+        <!-- Liste des pays touchés -->
+        <div class="flags">
+            <div class="flag">France</div>
+            <div class="flag">USA</div>
+            <div class="flag">Saudi Arabia</div>
+            <div class="flag">Mexico</div>
+            <div class="flag">Germany</div>
+            <div class="flag">Russia</div>
+            <div class="flag">Ukraine</div>
+            <div class="flag">Iraq</div>
+            <div class="flag">Brazil</div>
+            <div class="flag">Italy</div>
+            <div class="flag">Czech Republic</div>
+            <div class="flag">Kazakhstan</div>
+            <div class="flag">Colombia</div>
+            <div class="flag">South Korea</div>
+        </div>
+    </section>
 
     <!-- FINAL CTA / CONTACT -->
     <section class="final-cta" id="contact">
         <h2 class="section-title">Ready to build your creative infrastructure?</h2>
 
-        <a class="cta-button" 
-           href="https://calendly.com/yakouroman/30min" 
-           target="_blank" 
-           rel="noopener noreferrer">
+        <a class="cta-button" href="https://calendly.com/yakouroman/30min" target="_blank" rel="noopener noreferrer">
             Book a Strategic Call
         </a>
 
